@@ -1,2 +1,9 @@
 # Hangman POCs Project
-BM/23
+
+### Usage
+- git clone https://github.com/BMAgeas/hangman-proof-of-concepts
+- cd .\hangman-proof-of-concepts\
+- npm i
+- npm start
+
+_BM/23_

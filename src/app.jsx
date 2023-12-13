@@ -1,4 +1,3 @@
-import "./app.css"
 import React				from "react"
 import LetterPlaceholder	from "./components/LetterPlaceholder"
 
@@ -9,7 +8,7 @@ export default () => {
 	const [guessCount, setGuessCount] = React.useState(0)
 
 	return (
-		<main className="main-tag">
+		<main style={{ textAlign : "center" }}>
 
 			<h1>Hangman</h1>
 			<br/><br/>

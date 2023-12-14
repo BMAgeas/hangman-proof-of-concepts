@@ -7,8 +7,8 @@ export default React.forwardRef(
 		style={{ fontSize : "4rem", display : "inline", padding : "1rem" }}
 		onClick={
 			(e) => {
-				const newLetter = [...window.prompt("Guess letter value...")].at(0).toUpperCase()
-				if (newLetter == props.TargetLetter) { e.target.innerText = newLetter; props.OnCorrectGuess() }
+				const newLetter = [...(window.prompt("Guess letter value...") || "_")].at(0).toUpperCase()
+				if (newLetter === props.TargetLetter) { e.target.innerText = newLetter; props.OnCorrectGuess() }
 				else { props.OnIncorrectGuess() }
 			}
 		}

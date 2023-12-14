@@ -31,4 +31,6 @@ _BM/23_
 		So we should be using useEffect() with an empty dependancies array.
 	*/
 
+	setLPRefs(lpRefs.splice(0, w.length))
+
 -->

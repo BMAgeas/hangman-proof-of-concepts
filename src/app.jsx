@@ -26,7 +26,7 @@ export default () => {
 	
 	return (
 		<main style={{ textAlign : "center" }}>
-
+		
 			<h1>Hangman</h1>
 			<br/><br/>
 
@@ -34,10 +34,11 @@ export default () => {
 				[...word].map(
 					(letter, index) => <LetterPlaceholder
 						key={index}
-						ref={lpRefs.at(index)}
-						TargetLetter={letter.toUpperCase()}
-						AllLPs={lpRefs}
-						OnIncorrectGuess={() => setGuessCount(prev => ++prev)}
+						fowardRef={lpRefs.at(index)}
+						targetLetter={letter.toUpperCase()}
+						allLPs={lpRefs}
+						onIncorrectGuess={() => setGuessCount(prev => ++prev)}
+						onClick={() => setLettersGuessed((lettersGuessed) => lettersGuessed.push("a"))}
 					/>
 				)
 			}

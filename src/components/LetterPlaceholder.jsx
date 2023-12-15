@@ -1,21 +1,24 @@
 import React from "react"
 
-export default React.forwardRef(
-	(props, ref) =>
+const LetterPlaceholder = (props) => {
+
+	return(	
 	<div
-		ref={ref}
+		ref={props.forwardRef}
 		style={{ fontSize : "4rem", display : "inline", padding : "1rem" }}
 		data-target-letter={props.TargetLetter}
 		onClick={
 			(e) => {
+
+				console.log("Yes")
 				
 				// If all letters are already solved, return
-				if (props.AllLPs.every(lpRef => lpRef.current?.innerText !== "_")) { return }
+				if (props.AllLPs.every(lpRef => lpRef.current?.innerText !== "_")) { console.log("Return"); return; }
 
 				const inputLetter	= [...(window.prompt("Guess letter value...") || "_")].at(0).toUpperCase()
 
 				const otherLPs_targetingInputLetter = props.AllLPs
-					.filter(lpRef => lpRef !== ref)
+					.filter(lpRef => lpRef !== props.fowardRef)
 					.filter(lpRef => lpRef.current?.getAttribute("data-target-letter") === inputLetter)
 				
 				if (inputLetter === props.TargetLetter) {
@@ -38,4 +41,7 @@ export default React.forwardRef(
 	>
 		_
 	</div>
-)
+	)
+}
+
+export default LetterPlaceholder
